@@ -429,6 +429,189 @@
             text-decoration: none;
         }
 
+        /* How It Works */
+        .how-it-works {
+            padding: 120px 0;
+            background: #F4EDE4;
+        }
+
+        .how-it-works h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #4A4A42;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+
+        .step-card {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(184, 92, 56, 0.12);
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #B85C38 0%, #8B5C3C 100%);
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            margin-bottom: 14px;
+            color: #4A4A42;
+        }
+
+        .step-card p {
+            font-size: 15px;
+            color: #7F8178;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 120px 0;
+            background: white;
+            border-top: 1px solid #E8E6E1;
+        }
+
+        .testimonials h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #4A4A42;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+        }
+
+        .testimonial-card {
+            background: #F4EDE4;
+            padding: 44px;
+            border-radius: 8px;
+            border-left: 5px solid #B85C38;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            background: white;
+            box-shadow: 0 8px 24px rgba(184, 92, 56, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: #7F8178;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 16px;
+            font-weight: 700;
+            color: #4A4A42;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-role {
+            font-size: 13px;
+            color: #B85C38;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 120px 0;
+            background: #F4EDE4;
+        }
+
+        .benefits h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #4A4A42;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .benefits-intro {
+            text-align: center;
+            font-size: 18px;
+            color: #7F8178;
+            margin-bottom: 70px;
+            line-height: 1.6;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 44px;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(184, 92, 56, 0.12);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            color: #B85C38;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #4A4A42;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: #7F8178;
+            line-height: 1.7;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -585,6 +768,89 @@
                     <button type="submit">Get Started</button>
                 </form>
                 <p class="cta-note">Founding hosts get a 25% commission discount for life, plus premium listing placement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works for Hosts</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>List Your Space</h3>
+                    <p>Add photos, set your rates, and describe your studio. It takes less than 10 minutes to get started.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Reach Serious Dancers</h3>
+                    <p>Your space appears in searches by choreographers, dance companies, and students actively looking.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Manage Bookings</h3>
+                    <p>Accept bookings, manage availability, and communicate with renters—all in one dashboard.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Get Paid & Grow</h3>
+                    <p>Receive payments securely. Build reviews and reputation. Watch your bookings grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Studio Owners Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"My studio was 40% empty before Atelier. Now we're booked almost every day with serious artists."</p>
+                    <p class="testimonial-author">Marcus Thompson</p>
+                    <p class="testimonial-role">Studio Owner, Chicago</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The vetting process is incredible. I get serious inquiries, not window shoppers. Quality over volume, exactly what I wanted."</p>
+                    <p class="testimonial-author">Lisa Wong</p>
+                    <p class="testimonial-role">Rehearsal Space Host, Boston</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Atelier handles all the logistics. I just focus on maintaining a great space. The revenue is fantastic."</p>
+                    <p class="testimonial-author">David Park</p>
+                    <p class="testimonial-role">Space Provider, Austin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founding Member Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Founding Host Benefits</h2>
+            <p class="benefits-intro">Launch with us and lock in lifetime advantages.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">★</div>
+                    <h3>Lifetime 25% Commission Discount</h3>
+                    <p>Lock in permanently lower commission rates. Never pay the standard rate.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">★</div>
+                    <h3>Premium Listing Placement</h3>
+                    <p>Your space appears first in search results. Featured in launch campaigns.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">★</div>
+                    <h3>Founding Host Badge</h3>
+                    <p>Special badge on your listing showing you helped build Atelier from the start.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">★</div>
+                    <h3>Direct Support</h3>
+                    <p>Priority support and direct line to our team. Your feedback shapes our roadmap.</p>
+                </div>
             </div>
         </div>
     </section>

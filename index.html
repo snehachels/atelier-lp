@@ -569,6 +569,93 @@
             color: #D4A5A5;
         }
 
+        /* Team Section */
+        .team-section {
+            padding: 120px 0;
+            background: white;
+            border-top: 1px solid #E8E6E1;
+        }
+
+        .team-section h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4A4A42;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .team-intro {
+            text-align: center;
+            font-size: 17px;
+            color: #7F8178;
+            margin-bottom: 70px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 40px;
+            background: #F4EDE4;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            background: white;
+            box-shadow: 0 8px 24px rgba(184, 92, 56, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #B85C38 0%, #8B5C3C 100%);
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .team-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #4A4A42;
+        }
+
+        .team-role {
+            font-size: 14px;
+            color: #B85C38;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .team-bio {
+            font-size: 15px;
+            color: #7F8178;
+            line-height: 1.7;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -966,6 +1053,28 @@
             </div>
         </section>
     </div>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Built by the Dance Community</h2>
+            <p class="team-intro">Atelier is founded by dancers who understand the challenges. We're building the platform we wished existed.</p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">SC</div>
+                    <h3>Sneha Chelimilla</h3>
+                    <p class="team-role">Founder & Product</p>
+                    <p class="team-bio">Dancer and technologist passionate about building community-first platforms. Former PM at SC companies.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">+</div>
+                    <h3>Coming Soon</h3>
+                    <p class="team-role">Co-Founder & Design</p>
+                    <p class="team-bio">We're building an amazing team of dancers, designers, and builders. Join us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>

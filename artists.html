@@ -430,6 +430,189 @@
             text-decoration: none;
         }
 
+        /* How It Works */
+        .how-it-works {
+            padding: 120px 0;
+            background: #F4EDE4;
+        }
+
+        .how-it-works h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #4A4A42;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+
+        .step-card {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(184, 92, 56, 0.12);
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #B85C38 0%, #8B5C3C 100%);
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            margin-bottom: 14px;
+            color: #4A4A42;
+        }
+
+        .step-card p {
+            font-size: 15px;
+            color: #7F8178;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 120px 0;
+            background: white;
+            border-top: 1px solid #E8E6E1;
+        }
+
+        .testimonials h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #4A4A42;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+        }
+
+        .testimonial-card {
+            background: #F4EDE4;
+            padding: 44px;
+            border-radius: 8px;
+            border-left: 5px solid #B85C38;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            background: white;
+            box-shadow: 0 8px 24px rgba(184, 92, 56, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: #7F8178;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 16px;
+            font-weight: 700;
+            color: #4A4A42;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-role {
+            font-size: 13px;
+            color: #B85C38;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 120px 0;
+            background: #F4EDE4;
+        }
+
+        .benefits h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #4A4A42;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .benefits-intro {
+            text-align: center;
+            font-size: 18px;
+            color: #7F8178;
+            margin-bottom: 70px;
+            line-height: 1.6;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 44px;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(184, 92, 56, 0.12);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            color: #B85C38;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #4A4A42;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: #7F8178;
+            line-height: 1.7;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -586,6 +769,89 @@
                     <button type="submit">Join Atelier</button>
                 </form>
                 <p class="cta-note">Early members get lifetime perks, including reduced commission rates and priority booking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Profile</h3>
+                    <p>Tell the community about yourself, your dance style, and what you're looking for—collaborators, spaces, or opportunities.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Find & Connect</h3>
+                    <p>Browse dancers, studios, classes, and performances. Message collaborators, book spaces, join rehearsals.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Create Together</h3>
+                    <p>Collaborate on pieces, attend classes, perform, and build your creative practice with the community.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Build Your Reputation</h3>
+                    <p>Leave reviews, get discovered, and grow your standing within the dance community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Dancers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I found my collaborators for this year's piece in one week. On Instagram it took me three months."</p>
+                    <p class="testimonial-author">Maya Chen</p>
+                    <p class="testimonial-role">Choreographer, NYC</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Finally, a place where dancers are taken seriously. No tire-kickers, just real artists."</p>
+                    <p class="testimonial-author">James Rivera</p>
+                    <p class="testimonial-role">Contemporary Dancer, LA</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The space-booking feature alone saves me hours every week. But it's the community that keeps me here."</p>
+                    <p class="testimonial-author">Sofia Petrov</p>
+                    <p class="testimonial-role">Instructor & Dancer, SF</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founding Member Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Founding Member Benefits</h2>
+            <p class="benefits-intro">Join before launch and lock in lifetime perks.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">★</div>
+                    <h3>Lifetime Reduced Commissions</h3>
+                    <p>50% off space booking fees forever. Lock in this rate now.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">★</div>
+                    <h3>Priority Access</h3>
+                    <p>First access to new features, collaborative opportunities, and performances.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">★</div>
+                    <h3>Founding Member Badge</h3>
+                    <p>Special badge on your profile showing you helped build Atelier.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">★</div>
+                    <h3>Direct Influence</h3>
+                    <p>Your feedback shapes the product. You help decide what we build next.</p>
+                </div>
             </div>
         </div>
     </section>
