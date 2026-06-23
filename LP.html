@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DanceHub - Your Dance Community</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header / Nav */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #000;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-button {
+            background: white;
+            color: #C44569;
+            padding: 14px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid #FF6B9D;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .feature-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Value Proposition */
+        .value {
+            padding: 80px 0;
+        }
+        .value-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .value-text h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .value-text p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .value-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        .value-list li {
+            padding: 12px 0;
+            color: #666;
+            font-size: 15px;
+        }
+        .value-list li:before {
+            content: "✓ ";
+            color: #FF6B9D;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .value-image {
+            background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+            border-radius: 8px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        /* Problem Section */
+        .problems {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #C44569;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .problem-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        .problem-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            margin: 80px 0;
+        }
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        .email-signup {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .email-signup input {
+            flex: 1;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .email-signup button {
+            padding: 14px 30px;
+            background: #fff;
+            color: #C44569;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .email-signup button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+        }
+        .faq-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+        .faq-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            cursor: pointer;
+        }
+        .faq-item p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        footer a {
+            color: #FF6B9D;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+            .value-content {
+                grid-template-columns: 1fr;
+            }
+            .email-signup {
+                flex-direction: column;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">DanceHub</div>
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#problem">Problem</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Neighborhood Dance Community</h1>
+            <p>One platform to collaborate, learn, practice, and perform. Find dance partners. Book rehearsal spaces. Take classes. Discover events.</p>
+            <button class="cta-button" onclick="document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">Join the Community</button>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need in One Place</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">🤝</div>
+                    <h3>Find Collaborators</h3>
+                    <p>Connect with local dancers. Find rehearsal partners, choreographers, and performance opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🏢</div>
+                    <h3>Book Spaces</h3>
+                    <p>Find affordable rehearsal studios, practice rooms, and performance venues—from professionals and community members.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">👨‍🏫</div>
+                    <h3>Take Classes</h3>
+                    <p>Learn from local professionals. Hip-hop, ballet, contemporary, salsa, and more—all in your neighborhood.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎭</div>
+                    <h3>Attend Events</h3>
+                    <p>Discover local performances, jams, showcases, and dance events. Build your community reputation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem -->
+    <section class="problems" id="problem">
+        <div class="container">
+            <h2 class="section-title">The Dance Community Deserves Better</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Fragmented and Hard to Find</h3>
+                    <p>Collaborators are scattered across Instagram, Facebook, emails, and word-of-mouth. There's no central place to connect with the dance community in your city.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Expensive and Limited Spaces</h3>
+                    <p>Studio rental is expensive ($25-50/hour) and availability is hard to find. Plenty of empty rehearsal spaces exist but remain hidden.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Hard to Discover Opportunities</h3>
+                    <p>Classes, performances, and events are scattered everywhere. You miss collaborations, teaching gigs, and performances you'd love because you don't know they exist.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>No Community Home</h3>
+                    <p>Dancers in your city are isolated. There's no platform that brings dancers, teachers, and space owners together to build something meaningful.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Value -->
+    <section class="value">
+        <div class="container">
+            <div class="value-content">
+                <div class="value-text">
+                    <h2>Built by Dancers, for Dancers</h2>
+                    <p>We're creating a home for your local dance community. Not a corporate venue rental platform. A real community where dancers lift each other up.</p>
+                    
+                    <ul class="value-list">
+                        <li><strong>Find real people:</strong> Connect with local dancers, not just faceless studios</li>
+                        <li><strong>Affordable options:</strong> Peer-owned spaces at fair prices, not corporate markups</li>
+                        <li><strong>Build your reputation:</strong> Reviews, credits, and recognition within the community</li>
+                        <li><strong>Discover opportunities:</strong> Classes, performances, and collaborations you'd never find on Instagram</li>
+                        <li><strong>Support your community:</strong> Your fees go to local dancers, teachers, and space owners—not a mega-corp</li>
+                    </ul>
+                    
+                    <button class="cta-button" onclick="document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">Get Early Access</button>
+                </div>
+                
+                <div class="value-image">
+                    [Dance community together]
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container" id="email-form">
+            <h2>Be Part of the Community</h2>
+            <p style="margin-bottom: 30px; font-size: 16px;">Join dancers, teachers, and space owners building the future of our dance community. Early members get lifetime perks.</p>
+            <form class="email-signup" onsubmit="handleSignup(event)">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit">Notify Me</button>
+            </form>
+            <p style="margin-top: 20px; font-size: 13px; opacity: 0.8;">We respect your inbox. Unsubscribe anytime.</p>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Questions?</h2>
+            <div class="faq-item">
+                <h3>How does DanceHub work?</h3>
+                <p>Create a profile, find and connect with local dancers in your style. Browse rehearsal spaces and book them. Discover and teach classes. Find and attend performances. It's like having a home for your entire dance life—all in one place.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How much does it cost?</h3>
+                <p>Browsing and connecting with dancers is FREE. If you book a space, we take a small commission from the host. If you teach classes, there's a listing fee. Early members get special pricing and lifetime perks.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this just for professionals or also for amateurs?</h3>
+                <p>Both! Beginners, hobbyists, and professionals. Whether you dance for fun or it's your career, there's a place for you here. In fact, the mix is what makes the community valuable.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is this different from Instagram or Facebook Groups?</h3>
+                <p>Instagram is scattered. Facebook Groups are chaotic. We're building a real platform designed specifically for dancers—with profiles, collaboration matching, space booking, class discovery, and event management all integrated. Think of us as the "home base" for your dance community.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What about space liability and safety?</h3>
+                <p>Great question. We'll have verification features, reviews, and clear safety guidelines. We recommend renters and hosts use their own insurance (like most peer-to-peer platforms). We're transparent about this, not hiding it.</p>
+            </div>
+            <div class="faq-item">
+                <h3>When does it launch?</h3>
+                <p>We're building the MVP now and will launch with a small community in [Your City] in [Month]. Early members get 3 months free access and special lifetime perks. Join now to secure your spot.</p>
+            </div>
+            <div class="faq-item">
+                <h3>My city isn't listed. Can you launch there?</h3>
+                <p>We're focusing on one city first to build a strong community. If you're interested in your city being next, join the waitlist and let us know—we'll keep you in the loop.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DanceHub. <a href="#privacy">Privacy</a> • <a href="#terms">Terms</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function handleSignup(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            
+            // Send to Mailchimp or your backend
+            alert(`Thanks! We'll email you at ${email} when we launch.`);
+            e.target.reset();
+            
+            // TODO: Connect to Mailchimp or your email service
+            // For now, you can use Zapier to capture email → Google Sheet
+        }
+    </script>
+</body>
+</html>
