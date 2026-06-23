@@ -489,7 +489,8 @@
                 <div class="logo">ATELIER</div>
                 <div class="header-right">
                     <div class="audience-toggle">
-                        <button class="toggle-btn active" onclick="switchView('artists')">For Artists</button>
+                        <button class="toggle-btn active" onclick="switchView('unified')">Home</button>
+                        <button class="toggle-btn" onclick="switchView('artists')">For Artists</button>
                         <button class="toggle-btn" onclick="switchView('hosts')">For Hosts</button>
                     </div>
                     <nav>
@@ -500,8 +501,88 @@
         </div>
     </header>
 
+    <!-- UNIFIED VIEW -->
+    <div id="unified-view" class="content-section active">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>Where Dancers Create Together</h1>
+                <p class="tagline">A creative home for the dance community</p>
+            </div>
+        </section>
+
+        <!-- Intro -->
+        <section class="intro">
+            <div class="intro-content">
+                <h2>Not a Marketplace. A Home.</h2>
+                <p>We spent 6 weeks talking to professional dancers, choreographers, and teachers. They told us what they needed: a real home for the dance community.</p>
+                <p>Not another transactional platform. Not scattered across Instagram and Google Sheets. A place where dancers and studios create together.</p>
+            </div>
+        </section>
+
+        <!-- Two Audiences Section -->
+        <section class="features">
+            <div class="container">
+                <h2>One Platform. Two Paths.</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 style="color: #B85C38; margin-bottom: 25px; font-size: 28px;">For Artists</h3>
+                        <p style="margin-bottom: 25px;"><strong>Find collaborators. Book spaces. Build your creative practice.</strong></p>
+                        <ul style="list-style: none; margin: 20px 0;">
+                            <li style="border-bottom: 1px solid #D4B9A0; padding: 10px 0; color: #7F8178;"><span style="color: #B85C38; font-weight: 700; margin-right: 8px;">→</span> Find your collaborators by style and vision</li>
+                            <li style="border-bottom: 1px solid #D4B9A0; padding: 10px 0; color: #7F8178;"><span style="color: #B85C38; font-weight: 700; margin-right: 8px;">→</span> Book rehearsal and performance spaces</li>
+                            <li style="border-bottom: 1px solid #D4B9A0; padding: 10px 0; color: #7F8178;"><span style="color: #B85C38; font-weight: 700; margin-right: 8px;">→</span> Learn from local teachers and mentors</li>
+                            <li style="padding: 10px 0; color: #7F8178;"><span style="color: #B85C38; font-weight: 700; margin-right: 8px;">→</span> Build your reputation in a community</li>
+                        </ul>
+                        <button class="cta-button" onclick="switchView('artists')">Explore for Artists</button>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="color: #B85C38; margin-bottom: 25px; font-size: 28px;">For Hosts</h3>
+                        <p style="margin-bottom: 25px;"><strong>Fill your studio. Grow your revenue. Build community.</strong></p>
+                        <ul style="list-style: none; margin: 20px 0;">
+                            <li style="border-bottom: 1px solid #D4B9A0; padding: 10px 0; color: #7F8178;"><span style="color: #B85C38; font-weight: 700; margin-right: 8px;">→</span> List your space in minutes</li>
+                            <li style="border-bottom: 1px solid #D4B9A0; padding: 10px 0; color: #7F8178;"><span style="color: #B85C38; font-weight: 700; margin-right: 8px;">→</span> Connect with serious, verified dancers</li>
+                            <li style="border-bottom: 1px solid #D4B9A0; padding: 10px 0; color: #7F8178;"><span style="color: #B85C38; font-weight: 700; margin-right: 8px;">→</span> Manage bookings and payments easily</li>
+                            <li style="padding: 10px 0; color: #7F8178;"><span style="color: #B85C38; font-weight: 700; margin-right: 8px;">→</span> Build your studio's reputation</li>
+                        </ul>
+                        <button class="cta-button" onclick="switchView('hosts')">Explore for Hosts</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Atelier -->
+        <section class="why-section">
+            <div class="container">
+                <div class="why-content">
+                    <div class="why-text">
+                        <h2>Built by the Dance Community, For the Dance Community</h2>
+                        <p>The dance community is scattered. Choreographers coordinate through text. Teachers promote on Instagram. Dancers hunt for spaces on Craigslist. Studios chase bookings without a real home.</p>
+                        <p style="margin-top: 20px;">We're building the platform dancers and studios actually want. Where quality matters. Where you find the right collaborators, book the right spaces, and build a reputation that lasts.</p>
+                    </div>
+                    <div class="why-image">
+                        [A space for your creative vision]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Be a Founding Member</h2>
+                <p>Get early access. Help shape the platform. Whether you're an artist or a host, receive lifetime founding member benefits.</p>
+                <form class="email-signup" onsubmit="handleSignup(event, 'founding')">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit">Join Atelier</button>
+                </form>
+                <p class="cta-note">Launching in [City] in [Month]. Founding members get special pricing, priority access, and lifetime perks.</p>
+            </div>
+        </section>
+    </div>
+
     <!-- ARTISTS VIEW -->
-    <div id="artists-view" class="content-section active">
+    <div id="artists-view" class="content-section">
         <!-- Hero -->
         <section class="hero">
             <div class="container">
@@ -779,21 +860,27 @@
 
     <script>
         function switchView(view) {
+            const unifiedView = document.getElementById('unified-view');
             const artistsView = document.getElementById('artists-view');
             const hostsView = document.getElementById('hosts-view');
             const buttons = document.querySelectorAll('.toggle-btn');
 
-            if (view === 'artists') {
-                artistsView.classList.add('active');
-                hostsView.classList.remove('active');
+            unifiedView.classList.remove('active');
+            artistsView.classList.remove('active');
+            hostsView.classList.remove('active');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            if (view === 'unified') {
+                unifiedView.classList.add('active');
                 buttons[0].classList.add('active');
-                buttons[1].classList.remove('active');
-                window.history.pushState({ view: 'artists' }, 'Atelier for Artists', '/');
-            } else {
-                hostsView.classList.add('active');
-                artistsView.classList.remove('active');
+                window.history.pushState({ view: 'unified' }, 'Atelier - Where Dancers Create Together', '/');
+            } else if (view === 'artists') {
+                artistsView.classList.add('active');
                 buttons[1].classList.add('active');
-                buttons[0].classList.remove('active');
+                window.history.pushState({ view: 'artists' }, 'Atelier for Artists', '/?view=artists');
+            } else if (view === 'hosts') {
+                hostsView.classList.add('active');
+                buttons[2].classList.add('active');
                 window.history.pushState({ view: 'hosts' }, 'Atelier for Hosts', '/?view=hosts');
             }
             window.scrollTo(0, 0);
@@ -815,7 +902,7 @@
 
         window.addEventListener('load', function() {
             const params = new URLSearchParams(window.location.search);
-            const view = params.get('view') || 'artists';
+            const view = params.get('view') || 'unified';
             switchView(view);
         });
     </script>
