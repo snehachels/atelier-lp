@@ -942,9 +942,29 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        .testimonial-container {
+            flex: 1;
+            position: relative;
+            text-align: center;
+        }
+
         .testimonial-content {
             text-align: center;
-            flex: 1;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .testimonial-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .testimonial-text {
@@ -1214,9 +1234,19 @@
         <section class="testimonials-section">
             <div class="testimonials-carousel">
                 <button class="testimonial-nav prev" onclick="changeTestimonial(-1)">‹</button>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">"I have watched this video DAILY and every time I notice something new and it gives me the same feelings all over again."</p>
-                    <p class="testimonial-author">NICOLE, VALLEY RANCH</p>
+                <div class="testimonial-container">
+                    <div class="testimonial-content active">
+                        <p class="testimonial-text">"I have watched this video DAILY and every time I notice something new and it gives me the same feelings all over again."</p>
+                        <p class="testimonial-author">NICOLE, VALLEY RANCH</p>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Managing my studio bookings was a nightmare across multiple platforms. Excited for how Atelier is consolidating everything and for how my admin time could be cut in half at least."</p>
+                        <p class="testimonial-author">STUDIO OWNER</p>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"I spend hours finding people to regularly practice with and coordinating the logistics is the worst. Really looking forward to what Atelier is building!"</p>
+                        <p class="testimonial-author">DANCER</p>
+                    </div>
                 </div>
                 <button class="testimonial-nav next" onclick="changeTestimonial(1)">›</button>
             </div>
@@ -1592,6 +1622,23 @@
             alert(`Thank you, ${name}! We've received your message and will get back to you at ${email}.`);
             e.target.reset();
             closeContactModal();
+        }
+
+        let currentTestimonialIndex = 0;
+
+        function changeTestimonial(direction) {
+            const testimonials = document.querySelectorAll('.testimonial-content');
+            testimonials[currentTestimonialIndex].classList.remove('active');
+
+            currentTestimonialIndex += direction;
+
+            if (currentTestimonialIndex >= testimonials.length) {
+                currentTestimonialIndex = 0;
+            } else if (currentTestimonialIndex < 0) {
+                currentTestimonialIndex = testimonials.length - 1;
+            }
+
+            testimonials[currentTestimonialIndex].classList.add('active');
         }
 
         document.addEventListener('DOMContentLoaded', function() {
