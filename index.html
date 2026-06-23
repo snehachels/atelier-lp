@@ -568,27 +568,90 @@
 
         /* Footer */
         footer {
-            background: #4A4A42;
-            color: #B0B0B0;
-            padding: 60px 0;
-            text-align: center;
-            font-size: 13px;
-            border-top: 1px solid rgba(212, 185, 160, 0.2);
+            background: #1a1a1a;
+            padding: 40px 0;
+            border-top: 1px solid #333;
         }
 
-        footer p {
-            letter-spacing: 0.3px;
-            line-height: 1.6;
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
         }
 
-        footer a {
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
             color: #B85C38;
-            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .footer-social a {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #B85C38;
             transition: color 0.3s ease;
         }
 
-        footer a:hover {
+        .footer-social a:hover {
             color: #D4A5A5;
+        }
+
+        .footer-social svg {
+            width: 100%;
+            height: 100%;
+            stroke-width: 1.5;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 30px;
+            flex-shrink: 0;
+        }
+
+        .footer-nav a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #B85C38;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #D4A5A5;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
 
         /* Team Section */
@@ -842,6 +905,86 @@
             }
         }
 
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #E2725B 0%, #D9956F 100%);
+        }
+
+        .testimonials-carousel {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .testimonial-nav {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            background: transparent;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .testimonial-nav:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-content {
+            text-align: center;
+            flex: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 24px;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-section {
+                padding: 60px 0;
+            }
+
+            .testimonials-carousel {
+                gap: 20px;
+            }
+
+            .testimonial-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+
+            .testimonial-text {
+                font-size: 18px;
+            }
+        }
+
         /* Contact Modal */
         .contact-modal-overlay {
             display: none;
@@ -1065,6 +1208,18 @@
                         [A space for your creative vision]
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="testimonials-carousel">
+                <button class="testimonial-nav prev" onclick="changeTestimonial(-1)">‹</button>
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"I have watched this video DAILY and every time I notice something new and it gives me the same feelings all over again."</p>
+                    <p class="testimonial-author">NICOLE, VALLEY RANCH</p>
+                </div>
+                <button class="testimonial-nav next" onclick="changeTestimonial(1)">›</button>
             </div>
         </section>
     </div>
@@ -1342,8 +1497,32 @@
     <!-- Team Section -->
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Atelier. <a href="#">Privacy</a> • <a href="#">Terms</a></p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>ATELIER</span>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"/><circle cx="17.5" cy="6.5" r="1.5"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-nav">
+                <a href="artists.html">Artists</a>
+                <a href="studios.html">Studios</a>
+                <a href="organizers.html">Organizers</a>
+            </div>
         </div>
     </footer>
 
