@@ -788,11 +788,13 @@
                 hostsView.classList.remove('active');
                 buttons[0].classList.add('active');
                 buttons[1].classList.remove('active');
+                window.history.pushState({ view: 'artists' }, 'Atelier for Artists', '/');
             } else {
                 hostsView.classList.add('active');
                 artistsView.classList.remove('active');
                 buttons[1].classList.add('active');
                 buttons[0].classList.remove('active');
+                window.history.pushState({ view: 'hosts' }, 'Atelier for Hosts', '/?view=hosts');
             }
             window.scrollTo(0, 0);
         }
@@ -804,6 +806,18 @@
             alert(`Welcome to Atelier, ${role}! We'll email you at ${email} when we launch.`);
             e.target.reset();
         }
+
+        window.addEventListener('popstate', function(event) {
+            if (event.state && event.state.view) {
+                switchView(event.state.view);
+            }
+        });
+
+        window.addEventListener('load', function() {
+            const params = new URLSearchParams(window.location.search);
+            const view = params.get('view') || 'artists';
+            switchView(view);
+        });
     </script>
 </body>
 </html>
