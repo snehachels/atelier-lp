@@ -108,19 +108,28 @@
             color: #B85C38;
         }
 
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
         nav a {
             font-family: 'Montserrat', sans-serif;
             text-decoration: none;
             color: #7F8178;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
             letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: color 0.3s;
+            text-transform: capitalize;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
         }
 
         nav a:hover {
             color: #B85C38;
+            border-bottom-color: #B85C38;
         }
 
         /* Hero */
@@ -712,8 +721,8 @@
             <div class="header-content">
                 <a href="/" class="logo" onclick="switchView('unified'); return false;">ATELIER</a>
                 <nav>
-                    <a href="artists.html">For Artists</a>
-                    <a href="hosts.html">For Hosts</a>
+                    <a href="artists.html">Artists</a>
+                    <a href="hosts.html">Hosts</a>
                 </nav>
             </div>
         </div>
