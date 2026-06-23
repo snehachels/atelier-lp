@@ -713,6 +713,126 @@
             }
         }
 
+        /* Audiences Section */
+        .audiences-section {
+            padding: 80px 0;
+            background-color: #F4EDE4;
+        }
+
+        .audiences-title {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #4A4A42;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .audiences-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .audience-card {
+            position: relative;
+            min-height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .audience-card-content {
+            padding: 50px;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+
+        .audience-card-title {
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .audience-card-description {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .audience-card-button {
+            display: inline-block;
+            background: #B85C38;
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+
+        .audience-card-button:hover {
+            background: #D4A5A5;
+            color: #4A4A42;
+        }
+
+        @media (max-width: 1024px) {
+            .audiences-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .audiences-section {
+                padding: 60px 0;
+            }
+
+            .audiences-title {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            .audiences-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .audience-card {
+                min-height: 350px;
+            }
+
+            .audience-card-content {
+                padding: 35px;
+            }
+
+            .audience-card-title {
+                font-size: 28px;
+            }
+
+            .audience-card-description {
+                font-size: 14px;
+            }
+        }
+
         /* Contact Modal */
         .contact-modal-overlay {
             display: none;
@@ -888,23 +1008,35 @@
         </section>
 
         <!-- Intro -->
-        <!-- Two Audiences Section -->
-        <section class="features">
+        <!-- Three Audiences Section -->
+        <section class="audiences-section">
             <div class="container">
-                <h2>One Platform. Two Paths.</h2>
-                <div class="features-grid">
-                    <div class="feature-card" style="padding: 0; overflow: hidden; background: linear-gradient(135deg, rgba(74, 74, 66, 0.85) 0%, rgba(184, 92, 56, 0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; min-height: 400px; position: relative;">
-                        <div style="padding: 50px; color: white; position: relative; z-index: 2;">
-                            <h3 style="color: white; margin-bottom: 20px; font-size: 32px; font-weight: 700;">For Artists</h3>
-                            <p style="font-size: 18px; line-height: 1.6; margin-bottom: 30px; opacity: 0.95;">Stop hunting for collaborators across Instagram and Craigslist. Find the right dancers, book spaces, and build your creative home all in one place.</p>
-                            <button class="cta-button" style="background: white; color: #B85C38;" onclick="switchView('artists')">Learn More</button>
+                <h2 class="audiences-title">One Platform for Artists • Studios • Organizers</h2>
+                <div class="audiences-grid">
+                    <!-- Artists Card -->
+                    <div class="audience-card" style="background: linear-gradient(135deg, rgba(74, 74, 66, 0.75) 0%, rgba(74, 74, 66, 0.75) 100%), linear-gradient(135deg, #4A4A42 0%, #3D3D36 100%); background-size: cover, cover;">
+                        <div class="audience-card-content">
+                            <h3 class="audience-card-title">ARTISTS</h3>
+                            <p class="audience-card-description">Stop hunting for collaborators across Instagram and Craigslist. Find the right dancers, book spaces, and build your creative home all in one place.</p>
+                            <a href="artists.html" class="audience-card-button">Learn More</a>
                         </div>
                     </div>
-                    <div class="feature-card" style="padding: 0; overflow: hidden; background: linear-gradient(135deg, rgba(74, 74, 66, 0.85) 0%, rgba(184, 92, 56, 0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; min-height: 400px; position: relative;">
-                        <div style="padding: 50px; color: white; position: relative; z-index: 2;">
-                            <h3 style="color: white; margin-bottom: 20px; font-size: 32px; font-weight: 700;">For Hosts</h3>
-                            <p style="font-size: 18px; line-height: 1.6; margin-bottom: 30px; opacity: 0.95;">Your studio should be full of dancers who value your space. Connect with serious artists, manage bookings seamlessly, and build your reputation as a creative home.</p>
-                            <button class="cta-button" style="background: white; color: #B85C38;" onclick="switchView('hosts')">Learn More</button>
+
+                    <!-- Studios Card -->
+                    <div class="audience-card" style="background: linear-gradient(135deg, rgba(74, 74, 66, 0.75) 0%, rgba(74, 74, 66, 0.75) 100%), linear-gradient(135deg, #4A4A42 0%, #3D3D36 100%); background-size: cover, cover;">
+                        <div class="audience-card-content">
+                            <h3 class="audience-card-title">STUDIOS</h3>
+                            <p class="audience-card-description">Your studio should be full of dancers who value your space. Connect with serious artists, manage bookings seamlessly, and build your reputation as a creative home.</p>
+                            <a href="studios.html" class="audience-card-button">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- Organizers Card -->
+                    <div class="audience-card" style="background: linear-gradient(135deg, rgba(74, 74, 66, 0.75) 0%, rgba(74, 74, 66, 0.75) 100%), linear-gradient(135deg, #4A4A42 0%, #3D3D36 100%); background-size: cover, cover;">
+                        <div class="audience-card-content">
+                            <h3 class="audience-card-title">ORGANIZERS</h3>
+                            <p class="audience-card-description">Promote your events to engaged dancers actively seeking opportunities. Build your community and create momentum around the experiences you offer.</p>
+                            <a href="organizers.html" class="audience-card-button">Learn More</a>
                         </div>
                     </div>
                 </div>
