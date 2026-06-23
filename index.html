@@ -56,6 +56,8 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: color 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .logo:hover {
@@ -697,11 +699,10 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">ATELIER</div>
+                <a href="/" class="logo" onclick="switchView('unified'); return false;">ATELIER</a>
                 <div class="header-right">
                     <div class="audience-toggle">
-                        <button class="toggle-btn active" onclick="switchView('unified')">Home</button>
-                        <button class="toggle-btn" onclick="switchView('artists')">For Artists</button>
+                        <button class="toggle-btn active" onclick="switchView('artists')">For Artists</button>
                         <button class="toggle-btn" onclick="switchView('hosts')">For Hosts</button>
                     </div>
                     <nav>
