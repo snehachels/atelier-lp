@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier for Artists - A Creative Home for Dancers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            line-height: 1.7;
+            color: #7F8178;
+            background-color: #F4EDE4;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #4A4A42;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 25px 0;
+            border-bottom: 1px solid #E8E6E1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #4A4A42;
+            letter-spacing: 1px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .audience-toggle {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            border-right: 1px solid #E8E6E1;
+            padding-right: 30px;
+        }
+
+        .audience-toggle a {
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            color: #7F8178;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .audience-toggle a.active {
+            color: #B85C38;
+            font-weight: 600;
+        }
+
+        .audience-toggle a:hover {
+            color: #B85C38;
+        }
+
+        nav a {
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            color: #7F8178;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #B85C38;
+        }
+
+        /* Hero */
+        .hero {
+            background: #4A4A42;
+            color: #F4EDE4;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            font-weight: 700;
+        }
+
+        .hero .tagline {
+            font-size: 24px;
+            margin-bottom: 50px;
+            opacity: 0.95;
+            font-style: italic;
+            font-family: 'Crimson Text', serif;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            background: #B85C38;
+            color: white;
+            padding: 16px 48px;
+            border-radius: 2px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background: #8B5C3C;
+            transform: translateY(-2px);
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #4A4A42;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #7F8178;
+            margin-bottom: 20px;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 100px 0;
+            background: #F4EDE4;
+        }
+
+        .features h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #4A4A42;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 50px;
+            border-left: 4px solid #B85C38;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #4A4A42;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #7F8178;
+            line-height: 1.8;
+        }
+
+        /* Why Atelier */
+        .why-atelier {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .why-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-text h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #4A4A42;
+        }
+
+        .why-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #7F8178;
+            margin-bottom: 20px;
+        }
+
+        .value-list {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .value-list li {
+            padding: 12px 0;
+            font-size: 16px;
+            color: #7F8178;
+            border-bottom: 1px solid #D4B9A0;
+        }
+
+        .value-list li:before {
+            content: "→ ";
+            color: #B85C38;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+        .why-image {
+            background: linear-gradient(135deg, #B85C38 0%, #8B5C3C 100%);
+            height: 400px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F4EDE4;
+            font-size: 18px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* The Gap Section */
+        .the-gap {
+            padding: 100px 0;
+            background: #4A4A42;
+            color: #F4EDE4;
+        }
+
+        .the-gap h2 {
+            font-size: 42px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #B85C38;
+        }
+
+        .gap-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .gap-item {
+            padding: 40px;
+            border: 1px solid #7F8178;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .gap-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #B85C38;
+        }
+
+        .gap-item p {
+            font-size: 16px;
+            color: #D4B9A0;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #B85C38 0%, #8B5C3C 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 50px;
+            opacity: 0.95;
+        }
+
+        .email-signup {
+            display: flex;
+            gap: 0;
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .email-signup input {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            background: white;
+            color: #4A4A42;
+        }
+
+        .email-signup input::placeholder {
+            color: #AAA;
+        }
+
+        .email-signup button {
+            padding: 16px 40px;
+            background: #4A4A42;
+            color: #B85C38;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.3s;
+        }
+
+        .email-signup button:hover {
+            background: #2A2A22;
+        }
+
+        .cta-note {
+            margin-top: 20px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: #F4EDE4;
+        }
+
+        .faq h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #4A4A42;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid #B85C38;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #4A4A42;
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: #7F8178;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #4A4A42;
+            color: #B0B0B0;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #B85C38;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            .hero .tagline {
+                font-size: 18px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .why-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .gap-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+            .feature-card {
+                padding: 30px;
+            }
+            .header-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .audience-toggle {
+                border-right: none;
+                border-bottom: 1px solid #E8E6E1;
+                padding-right: 0;
+                padding-bottom: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">ATELIER</div>
+                <div class="header-nav">
+                    <div class="audience-toggle">
+                        <a href="artists.html" class="active">For Artists</a>
+                        <a href="hosts.html">For Hosts</a>
+                    </div>
+                    <nav>
+                        <a href="#features">Features</a>
+                        <a href="#why">Why Atelier</a>
+                        <a href="#faq">FAQ</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Where Dancers Create Together</h1>
+            <p class="tagline">Find collaborators. Book spaces. Build your creative practice.</p>
+            <button class="cta-button" onclick="document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">Join as an Artist</button>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="intro-content">
+            <h2>Stop Hunting. Start Creating.</h2>
+            <p>We talked to dancers, choreographers, and teachers about what they actually need. They told us: a real home for the dance community, not another transactional platform.</p>
+            <p>A place where you find the right collaborators, book the spaces you need, discover opportunities, and build your reputation within a community that gets it.</p>
+            <p>This is Atelier for Artists.</p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Everything You Need to Create</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Find Your Collaborators</h3>
+                    <p>Stop scrolling Instagram. Search by style, experience, and vision. Find the dancers, choreographers, and musicians who get your work.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Book Rehearsal Spaces</h3>
+                    <p>Discover affordable studios, practice rooms, and performance venues listed by real dancers and studio owners who understand your needs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Learn From Masters</h3>
+                    <p>Find classes and workshops from local teachers. Build your craft. Connect with mentors in your city.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Perform & Showcase</h3>
+                    <p>Discover jams, showcases, and performance opportunities. Show your work to the people who matter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Atelier -->
+    <section class="why-atelier" id="why">
+        <div class="container">
+            <div class="why-content">
+                <div class="why-text">
+                    <h2>Built by Dancers, For Dancers</h2>
+                    <p>We listened to what dancers actually need. Here's what we heard:</p>
+                    <ul class="value-list">
+                        <li><strong>Stop wasting hours</strong> coordinating through texts and DMs</li>
+                        <li><strong>Find real people,</strong> not just faceless studios</li>
+                        <li><strong>Discover opportunities</strong> scattered across Instagram and word-of-mouth</li>
+                        <li><strong>Build your reputation</strong> within a community that recognizes your work</li>
+                        <li><strong>Own your creative practice</strong> in a space built for artists</li>
+                    </ul>
+                </div>
+                <div class="why-image">
+                    [A space for your creative vision]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Gap Section -->
+    <section class="the-gap">
+        <div class="container">
+            <h2>The Problem Atelier Solves</h2>
+            <div class="gap-grid">
+                <div class="gap-item">
+                    <h3>Before Atelier</h3>
+                    <p>You rehearse in borrowed studios. You find collaborators on Instagram. You hunt for classes on Craigslist. You hear about performances through friends.</p>
+                    <p>Your dance community is scattered.</p>
+                </div>
+                <div class="gap-item">
+                    <h3>With Atelier</h3>
+                    <p>One platform. Your home base. Find collaborators, book spaces, learn from teachers, discover performances, build your reputation, create your art.</p>
+                    <p>Your dance community is connected.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div id="email-form">
+                <h2>Be a Founding Artist</h2>
+                <p>Get early access. Help shape the platform. Receive lifetime founding member benefits.</p>
+                <form class="email-signup" onsubmit="handleSignup(event)">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit">Join Atelier</button>
+                </form>
+                <p class="cta-note">Early members get lifetime perks, including reduced commission rates and priority booking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Questions?</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>What is Atelier exactly?</h3>
+                    <p>Atelier is a creative community platform for dancers. It's where you find collaborators, book rehearsal spaces, take classes from local teachers, discover performances, and build your reputation within the dance community. Think of it as the home base for your creative practice.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is this for professional dancers only?</h3>
+                    <p>No. Atelier is for all serious dancers—from professionals to passionate amateurs. If you care about your craft and want to be part of a thriving community, you belong here.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I find collaborators?</h3>
+                    <p>Search by dance style, experience level, and what you're looking for (a partner for a piece, a teacher, a group for a project). You'll see profiles from other artists, their work, and their reviews from the community.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How much does booking a space cost?</h3>
+                    <p>Prices vary by studio and location. Atelier takes a small fee from bookings. Early members get special pricing and lifetime discounts.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>When do I have to start paying?</h3>
+                    <p>Joining and exploring is always free. You only pay when you book a space or take a class. Discovering collaborators and building your profile is completely free.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>When does Atelier launch?</h3>
+                    <p>We're building the MVP now and will launch with our community in [City] in [Month]. Founding artists get early access and lifetime perks. Join now to shape what Atelier becomes.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>My city isn't listed yet. Can I still join?</h3>
+                    <p>We're launching in [City] first to build a strong, intentional community. Join the waitlist and let us know you're interested—we're planning expansions based on community demand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Atelier. <a href="#">Privacy</a> • <a href="#">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSignup(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            alert(`Welcome to Atelier, artist! We'll email you at ${email} when we launch.`);
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
