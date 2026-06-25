@@ -491,9 +491,9 @@
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 50px;
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
         }
 
@@ -541,6 +541,46 @@
             color: #7F8178;
             line-height: 1.8;
             font-family: 'Crimson Text', serif;
+        }
+
+        @media (max-width: 1024px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .step-card {
+                padding: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .how-it-works {
+                padding: 100px 0;
+            }
+
+            .how-it-works h2 {
+                margin-bottom: 60px;
+                font-size: 36px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .step-card {
+                padding: 40px;
+            }
+
+            .step-card h3 {
+                font-size: 20px;
+                margin-bottom: 14px;
+            }
+
+            .step-card p {
+                font-size: 15px;
+            }
         }
 
         /* Testimonials */
