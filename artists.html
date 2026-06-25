@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier for Artists - A Creative Home for Dancers</title>
+    <title>Atelier for Artists - Find Collaborators. Book Spaces. Create Together.</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
         }
 
         body {
@@ -145,7 +144,7 @@
             background: #B85C38;
             color: white;
             padding: 16px 48px;
-            border-radius: 4px; box-shadow: 0 4px 15px rgba(184, 92, 56, 0.2);
+            border-radius: 4px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 13px;
@@ -272,7 +271,7 @@
         .why-image {
             background: linear-gradient(135deg, #B85C38 0%, #8B5C3C 100%);
             height: 400px;
-            border-radius: 4px; box-shadow: 0 4px 15px rgba(184, 92, 56, 0.2);
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -346,7 +345,7 @@
             max-width: 500px;
             margin: 0 auto;
             background: white;
-            border-radius: 4px; box-shadow: 0 4px 15px rgba(184, 92, 56, 0.2);
+            border-radius: 4px;
             overflow: hidden;
         }
 
@@ -828,8 +827,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Where Artists Create Together</h1>
-            <p class="tagline">Find collaborators. Book spaces. Build your creative practice.</p>
+            <h1>Find Collaborators. Book Spaces. Create Together.</h1>
+            <p class="tagline">Your creative home is here. Join a community of artists building together.</p>
             <button class="cta-button" onclick="document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">Join as an Artist</button>
         </div>
     </section>
@@ -837,9 +836,10 @@
     <!-- Intro -->
     <section class="intro">
         <div class="intro-content">
-            <h2>Your Creative Home Awaits</h2>
-            <p>We spent weeks listening to choreographers, dancers, teachers, and musicians about what they truly need. Their answer was clear: a real home for creative practitioners. Not a marketplace. Not another transactional platform.</p>
-            <p>Atelier is where you find collaborators who understand your vision, secure the spaces you need, discover meaningful opportunities, and build a reputation that reflects your artistry. This is where you belong.</p>
+            <h2>Stop Creating Alone.</h2>
+            <p>We spoke with choreographers, musicians, dancers, and visual artists about their creative practice. The challenge was clear: finding the right collaborators, securing affordable spaces, and building real community felt impossible.</p>
+            <p>Atelier brings together artists who understand your vision. Find collaborators for your projects, book spaces when you need them, discover opportunities that matter, and build a reputation within a community of serious creatives.</p>
+            <p>This is your creative home.</p>
         </div>
     </section>
 
@@ -850,7 +850,7 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <h3>Find Your Collaborators</h3>
-                    <p>Stop scrolling Instagram. Search by discipline, style, and vision. Find the artists and practitioners who get your work and share your values.</p>
+                    <p>Stop scrolling Instagram. Search by discipline, style, and vision. Find artists and practitioners who understand your work and share your values.</p>
                 </div>
                 <div class="feature-card">
                     <h3>Book Creative Spaces</h3>
@@ -858,7 +858,7 @@
                 </div>
                 <div class="feature-card">
                     <h3>Learn & Grow</h3>
-                    <p>Find classes, workshops, and mentorship from practitioners in your field. Build your craft. Connect with artists who inspire you.</p>
+                    <p>Find classes, workshops, and mentorship from practitioners in your field. Build your craft and connect with artists who inspire you.</p>
                 </div>
                 <div class="feature-card">
                     <h3>Share Your Work</h3>
@@ -874,18 +874,33 @@
             <div class="why-content">
                 <div class="why-text">
                     <h2>Built by Artists, For Artists</h2>
-                    <p>We listened to what dancers actually need. Here's what we heard:</p>
+                    <p>Atelier is designed by people who understand the creative life:</p>
                     <ul class="value-list">
-                        <li><strong>Stop wasting hours</strong> coordinating through texts and DMs</li>
-                        <li><strong>Find real people,</strong> not just faceless studios</li>
-                        <li><strong>Discover opportunities</strong> scattered across Instagram and word-of-mouth</li>
-                        <li><strong>Build your reputation</strong> within a community that recognizes your work</li>
-                        <li><strong>Own your creative practice</strong> in a space built for artists</li>
+                        <li><strong>Serious artists</strong> who care about their craft</li>
+                        <li><strong>Real community</strong> that supports your growth</li>
+                        <li><strong>Affordable access</strong> to spaces and opportunities</li>
+                        <li><strong>No algorithms or algorithms that favor engagement over quality</strong> just real connections</li>
+                        <li><strong>Your home base</strong> to build your practice</li>
                     </ul>
                 </div>
                 <div class="why-image">
                     [A space for your creative vision]
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div id="email-form">
+                <h2>Be a Founding Artist</h2>
+                <p>Join our founding community and get exclusive lifetime benefits. Early members shape the platform and build their creative home from day one.</p>
+                <form class="email-signup" onsubmit="handleSignup(event)">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit">Join Now</button>
+                </form>
+                <p class="cta-note">Founding artists get 20% commission reduction for life, priority support, and early access to features.</p>
             </div>
         </div>
     </section>
@@ -924,7 +939,7 @@
                     <p class="testimonial-role">Dancer</p>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-quote">"Finally, I can find collaborators without scrolling through Instagram DMs. Atelier shows me exactly who's looking for what."</p>
+                    <p class="testimonial-quote">"Finally, a place where dancers are taken seriously. No tire-kickers, just real artists."</p>
                     <p class="testimonial-role">Choreographer</p>
                 </div>
             </div>
@@ -961,22 +976,6 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <div id="email-form">
-                <h2>Be a Founding Artist</h2>
-                <p>Join our founding community and get exclusive lifetime benefits. Early members shape the platform and build their creative home from day one.</p>
-                <form class="email-signup" onsubmit="handleSignup(event)">
-                    <input type="email" placeholder="your@email.com" required>
-                    <button type="submit">Join Atelier</button>
-                </form>
-                <p class="cta-note">Founding Artists receive: Lifetime 20% commission reduction • Priority support • Founding badge on profile • Early access to new features • Input on platform development</p>
-            </div>
-        </div>
-    </section>
-
-
     <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
@@ -984,32 +983,37 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <h3>What is Atelier exactly?</h3>
-                    <p>Atelier is a creative community platform for dancers. It's where you find collaborators, book rehearsal spaces, take classes from local teachers, discover performances, and build your reputation within the dance community. Think of it as the home base for your creative practice.</p>
+                    <p>Atelier is a creative community platform for artists. It's where you find collaborators, book creative spaces, discover opportunities, and build your reputation within a community that gets it. Think of it as the home base for your creative practice.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Is this for professional dancers only?</h3>
-                    <p>No. Atelier is for all serious dancers—from professionals to passionate amateurs. If you care about your craft and want to be part of a thriving community, you belong here.</p>
+                    <h3>Is this for professional artists only?</h3>
+                    <p>No. Atelier is for all serious artists—from professionals to passionate amateurs. If you care about your craft and want to be part of a thriving community, you belong here.</p>
                 </div>
 
                 <div class="faq-item">
                     <h3>How do I find collaborators?</h3>
-                    <p>Search by dance style, experience level, and what you're looking for (a partner for a piece, a teacher, a group for a project). You'll see profiles from other artists, their work, and their reviews from the community.</p>
+                    <p>Create a profile describing your discipline, style, and what you're looking for. Browse other artists' profiles, search by location and specialty, and message collaborators directly. Real artists, real connections.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How much does booking a space cost?</h3>
-                    <p>Prices vary by studio and location. Atelier takes a small fee from bookings. Early members get special pricing and lifetime discounts.</p>
+                    <h3>What does booking spaces cost?</h3>
+                    <p>Pricing varies by space, location, and availability. Space owners set their own rates. Founding artists get a 20% discount on all commissions, forever.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>When do I have to start paying?</h3>
-                    <p>Joining and exploring is always free. You only pay when you book a space or take a class. Discovering collaborators and building your profile is completely free.</p>
+                    <h3>How does the community work?</h3>
+                    <p>You build your reputation through collaborations, reviews from other artists, and your activity. The more engaged you are, the more visible you become to the right people.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Can I influence the product?</h3>
-                    <p>Yes. Founding members have direct input on product development. Your feedback shapes what we build next. We're building this with the community, not for it.</p>
+                    <h3>Can I shape the platform?</h3>
+                    <p>Absolutely. Founding artists directly influence the product roadmap. Your feedback shapes features, policies, and how we serve the community. We build with you, not for you.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What about my data and privacy?</h3>
+                    <p>Your profile is yours to control. Share what you want, keep things private if you prefer. Atelier respects your privacy and only uses your data to connect you with opportunities.</p>
                 </div>
             </div>
         </div>
@@ -1026,7 +1030,7 @@
         function handleSignup(e) {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
-            alert(`Welcome to Atelier, artist! We'll email you at ${email} when we launch.`);
+            alert(`Welcome to Atelier! We'll email you at ${email} with details on joining as a founding artist.`);
             e.target.reset();
         }
 
