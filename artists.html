@@ -115,6 +115,11 @@
             border-bottom-color: #4A4A42;
         }
 
+        nav a.active {
+            color: #4A4A42;
+            border-bottom-color: #B85C38;
+        }
+
         /* Hero */
         .hero {
             background: #4A4A42;
@@ -139,20 +144,6 @@
             font-family: 'Crimson Text', serif;
             font-weight: 400;
             line-height: 1.5;
-        }
-
-        .page-marker {
-            display: inline-block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #B85C38;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
-            border: 1px solid #B85C38;
-            margin-bottom: 40px;
         }
 
         .cta-button {
@@ -830,7 +821,7 @@
             <div class="header-content">
                 <a href="index.html" class="logo">ATELIER</a>
                 <nav>
-                    <a href="/artists">Artists</a>
+                    <a href="/artists" class="active">Artists</a>
                     <a href="/spaces">Spaces</a>
                     <a href="/organizers">Organizers</a>
                     <a href="#" onclick="openContactModal(event)">Contact</a>
@@ -842,7 +833,6 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <span class="page-marker">ARTISTS</span>
             <h1>Find Collaborators. Book Spaces. Create Together.</h1>
             <p class="tagline">Find collaborators, book spaces, and create without any chaos.</p>
             <button class="cta-button" onclick="document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">Join as an Artist</button>
