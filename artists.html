@@ -892,19 +892,20 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>Artists Already Love It</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Finding serious collaborators used to take months. With Atelier, I found my full ensemble in two weeks."</p>
-                    <p class="testimonial-role">Choreographer, NYC</p>
+    <section class="testimonials-section">
+        <div class="testimonials-carousel">
+            <button class="testimonial-nav prev" onclick="changeTestimonial(-1)">‹</button>
+            <div class="testimonial-container">
+                <div class="testimonial-content active">
+                    <p class="testimonial-text">"Finding serious collaborators used to take months. With Atelier, I found my full ensemble in two weeks."</p>
+                    <p class="testimonial-author">CHOREOGRAPHER</p>
                 </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"No more juggling five booking apps. One place to find spaces, manage bookings, and connect with the community. Exactly what we needed."</p>
-                    <p class="testimonial-role">Musician & Producer</p>
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"No more juggling five booking apps. One place to find spaces, manage bookings, and connect with the community. Exactly what we needed."</p>
+                    <p class="testimonial-author">MUSICIAN & PRODUCER</p>
                 </div>
             </div>
+            <button class="testimonial-nav next" onclick="changeTestimonial(1)">›</button>
         </div>
     </section>
 
