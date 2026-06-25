@@ -1103,6 +1103,23 @@
     </footer>
 
     <script>
+        let currentTestimonialIndex = 0;
+
+        function changeTestimonial(direction) {
+            const testimonials = document.querySelectorAll('.testimonial-content');
+            testimonials[currentTestimonialIndex].classList.remove('active');
+
+            currentTestimonialIndex += direction;
+
+            if (currentTestimonialIndex >= testimonials.length) {
+                currentTestimonialIndex = 0;
+            } else if (currentTestimonialIndex < 0) {
+                currentTestimonialIndex = testimonials.length - 1;
+            }
+
+            testimonials[currentTestimonialIndex].classList.add('active');
+        }
+
         function handleSignup(e) {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
