@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "src": "^/artists$",
+      "dest": "/artists.html"
+    },
+    {
+      "src": "^/spaces$",
+      "dest": "/spaces.html"
+    },
+    {
+      "src": "^/organizers$",
+      "dest": "/organizers.html"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/$1"
+    }
+  ]
+}
