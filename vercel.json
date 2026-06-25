@@ -1,20 +1,18 @@
 {
-  "routes": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "src": "^/artists$",
-      "dest": "/artists.html"
+      "source": "/artists",
+      "destination": "/artists.html"
     },
     {
-      "src": "^/spaces$",
-      "dest": "/spaces.html"
+      "source": "/spaces",
+      "destination": "/spaces.html"
     },
     {
-      "src": "^/organizers$",
-      "dest": "/organizers.html"
-    },
-    {
-      "src": "^/(.*)$",
-      "dest": "/$1"
+      "source": "/organizers",
+      "destination": "/organizers.html"
     }
   ]
 }
