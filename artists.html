@@ -141,6 +141,20 @@
             line-height: 1.5;
         }
 
+        .page-marker {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #B85C38;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border: 1px solid #B85C38;
+            margin-bottom: 40px;
+        }
+
         .cta-button {
             background: #B85C38;
             color: white;
@@ -828,6 +842,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
+            <span class="page-marker">ARTISTS</span>
             <h1>Find Collaborators. Book Spaces. Create Together.</h1>
             <p class="tagline">Find collaborators, book spaces, and create without any chaos.</p>
             <button class="cta-button" onclick="document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">Join as an Artist</button>
