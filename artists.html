@@ -226,14 +226,31 @@
 
         .feature-card {
             background: white;
-            padding: 50px;
-            border-left: 4px solid #B85C38;
+            padding: 60px;
+            border-left: 5px solid #B85C38;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(184, 92, 56, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            display: block;
         }
 
         .feature-card h3 {
             font-size: 24px;
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 16px;
             color: #4A4A42;
+            letter-spacing: -0.3px;
         }
 
         .feature-card p {
@@ -936,20 +953,24 @@
             <h2>What can Artists do with Atelier?</h2>
             <div class="features-grid">
                 <div class="feature-card">
+                    <span class="feature-icon">🤝</span>
                     <h3>Find collaborators and practice partners</h3>
                     <p>Search by discipline, style, and vision. No Instagram scroll. Just artists who get your work.</p>
                 </div>
                 <div class="feature-card">
+                    <span class="feature-icon">📍</span>
                     <h3>Book Spaces</h3>
                     <p>Affordable studios, rehearsal rooms, and venues. All listed by real artists and space owners.</p>
                 </div>
                 <div class="feature-card">
+                    <span class="feature-icon">✨</span>
                     <h3>Show your portfolio</h3>
-                    <p>Classes, workshops, and mentorship from practitioners in your field. Build your craft.</p>
+                    <p>Build a professional profile showcasing your work, experience, and creative vision to the community.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Share Your Work</h3>
-                    <p>Access to performances, showcases, and opportunities. Connect with your audience.</p>
+                    <span class="feature-icon">🎭</span>
+                    <h3>Discover & Perform</h3>
+                    <p>Access performances, showcases, and opportunities to share your work with engaged audiences.</p>
                 </div>
             </div>
         </div>
