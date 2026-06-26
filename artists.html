@@ -1422,7 +1422,7 @@
                 mode: 'no-cors'
             }).then(() => {
                 e.target.reset();
-                showSuccessModal(`Thank you! We've sent a confirmation to ${email}.`);
+                showSuccessModal(`Thank you! We'll get back to you at ${email}.`);
             }).catch((error) => {
                 console.error('Error:', error);
                 alert('There was an error. Please try again.');
