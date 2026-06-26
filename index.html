@@ -544,8 +544,8 @@
 
         .faq-item {
             background: white;
-            padding: 44px;
-            margin-bottom: 24px;
+            padding: 30px 44px;
+            margin-bottom: 15px;
             border-left: 5px solid #B85C38;
             border-radius: 4px;
             transition: all 0.3s ease;
@@ -558,16 +558,48 @@
 
         .faq-item h3 {
             font-size: 18px;
-            margin-bottom: 16px;
             color: #4A4A42;
             cursor: pointer;
             font-weight: 700;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item h3::after {
+            content: '+';
+            font-size: 24px;
+            color: #B85C38;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active h3::after {
+            transform: rotate(45deg);
         }
 
         .faq-item p {
             font-size: 15px;
             color: #7F8178;
             line-height: 1.8;
+            margin: 20px 0 0 0;
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Footer */
@@ -1360,27 +1392,27 @@
                 <h2>Questions?</h2>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <h3>What is Atelier exactly?</h3>
+                        <h3 onclick="toggleFAQ(this)">What is Atelier exactly?</h3>
                         <p>Atelier is a creative community platform for dancers. It's where you find collaborators, book rehearsal spaces, take classes from local teachers, discover performances, and build your reputation within the dance community. Think of it as the home base for your creative practice.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Is this for professional dancers only?</h3>
+                        <h3 onclick="toggleFAQ(this)">Is this for professional dancers only?</h3>
                         <p>No. Atelier is for all serious dancers—from professionals to passionate amateurs. If you care about your craft and want to be part of a thriving community, you belong here.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>How do I find collaborators?</h3>
+                        <h3 onclick="toggleFAQ(this)">How do I find collaborators?</h3>
                         <p>Search by dance style, experience level, and what you're looking for. You'll see profiles from other artists, their work, and their reviews from the community.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>How much does booking a space cost?</h3>
+                        <h3 onclick="toggleFAQ(this)">How much does booking a space cost?</h3>
                         <p>Prices vary by studio and location. Atelier takes a small fee from bookings. Early members get special pricing and lifetime discounts.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>When do I have to start paying?</h3>
+                        <h3 onclick="toggleFAQ(this)">When do I have to start paying?</h3>
                         <p>Joining and exploring is always free. You only pay when you book a space or take a class. Discovering collaborators and building your profile is completely free.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Can I influence the product?</h3>
+                        <h3 onclick="toggleFAQ(this)">Can I influence the product?</h3>
                         <p>Yes. Founding members have direct input on product development. Your feedback shapes what we build next. We're building this with the community, not for it.</p>
                     </div>
                 </div>
@@ -1495,27 +1527,27 @@
                 <h2>Questions About Hosting?</h2>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <h3>What can I list on Atelier?</h3>
+                        <h3 onclick="toggleFAQ(this)">What can I list on Atelier?</h3>
                         <p>Rehearsal studios, practice rooms, performance spaces, dance halls, multi-purpose studios, lofts with mirrors. Anything dancers use. You set the rate and availability.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>How much does it cost to list?</h3>
+                        <h3 onclick="toggleFAQ(this)">How much does it cost to list?</h3>
                         <p>Listing your space is free. When a booking happens, Atelier takes a commission from the rental. Founding hosts get special commission rates locked in for life.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>How do I set my rates?</h3>
+                        <h3 onclick="toggleFAQ(this)">How do I set my rates?</h3>
                         <p>You're in control. Set your hourly rate, half-day and full-day rates, and any special pricing. You can change rates anytime based on demand and availability.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>How do I get paid?</h3>
+                        <h3 onclick="toggleFAQ(this)">How do I get paid?</h3>
                         <p>Payments are processed through Atelier within 24 hours of a rental. Money goes directly to your bank account. No waiting, no checks.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>What if I have a cancellation?</h3>
+                        <h3 onclick="toggleFAQ(this)">What if I have a cancellation?</h3>
                         <p>You set your cancellation policy. Dancers are warned before booking. Atelier protects both hosts and renters with clear, transparent policies.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Can I influence the platform?</h3>
+                        <h3 onclick="toggleFAQ(this)">Can I influence the platform?</h3>
                         <p>Absolutely. Founding hosts shape the product roadmap. Your feedback directly influences features, policies, and how we serve the community. We build with you, not for you.</p>
                     </div>
                 </div>
@@ -1551,6 +1583,10 @@
     </footer>
 
     <script>
+        function toggleFAQ(element) {
+            element.parentElement.classList.toggle('active');
+        }
+
         function switchView(view) {
             const unifiedView = document.getElementById('unified-view');
             const artistsView = document.getElementById('artists-view');
