@@ -424,22 +424,56 @@
 
         .faq-item {
             background: white;
-            padding: 40px;
-            margin-bottom: 20px;
+            padding: 30px 40px;
+            margin-bottom: 15px;
             border-left: 4px solid #B85C38;
+            border-radius: 4px;
         }
 
         .faq-item h3 {
             font-size: 18px;
-            margin-bottom: 15px;
             color: #4A4A42;
             cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-item h3::after {
+            content: '+';
+            font-size: 24px;
+            color: #B85C38;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active h3::after {
+            transform: rotate(45deg);
         }
 
         .faq-item p {
             font-size: 16px;
             color: #7F8178;
             line-height: 1.7;
+            margin: 20px 0 0 0;
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Footer */
@@ -1108,37 +1142,37 @@
             <h2>Questions About Organizing on Atelier?</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <h3>What can I list on Atelier?</h3>
+                    <h3 onclick="toggleFAQ(this)">What can I list on Atelier?</h3>
                     <p>Rehearsal studios, practice rooms, performance spaces, dance halls, multi-purpose studios, lofts with mirrors. Anything dancers use. You set the rate and availability.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How much does it cost to list?</h3>
+                    <h3 onclick="toggleFAQ(this)">How much does it cost to list?</h3>
                     <p>Listing your space is free. When a booking happens, Atelier takes a commission from the rental. Founding hosts get special commission rates locked in for life.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How do I set my rates?</h3>
+                    <h3 onclick="toggleFAQ(this)">How do I set my rates?</h3>
                     <p>You're in control. Set your hourly rate, half-day and full-day rates, and any special pricing. You can change rates anytime based on demand and availability.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How do I get paid?</h3>
+                    <h3 onclick="toggleFAQ(this)">How do I get paid?</h3>
                     <p>Payments are processed through Atelier within 24 hours of a rental. Money goes directly to your bank account. No waiting, no checks.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>What if I have a cancellation?</h3>
+                    <h3 onclick="toggleFAQ(this)">What if I have a cancellation?</h3>
                     <p>You set your cancellation policy. Dancers are warned before booking. Atelier protects both hosts and renters with clear, transparent policies.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Can I influence the platform?</h3>
+                    <h3 onclick="toggleFAQ(this)">Can I influence the platform?</h3>
                     <p>Absolutely. Founding hosts shape the product roadmap. Your feedback directly influences features, policies, and how we serve the community. We build with you, not for you.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>What about insurance and liability?</h3>
+                    <h3 onclick="toggleFAQ(this)">What about insurance and liability?</h3>
                     <p>You maintain your own space insurance as always. Atelier hosts liability information clearly to renters. We recommend everyone carrying appropriate coverage.</p>
                 </div>
             </div>
@@ -1153,6 +1187,10 @@
     </footer>
 
     <script>
+        function toggleFAQ(element) {
+            element.parentElement.classList.toggle('active');
+        }
+
         function handleSignup(e) {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
