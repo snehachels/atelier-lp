@@ -500,30 +500,29 @@
         .how-it-works h2 {
             font-size: 48px;
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 70px;
             color: #4A4A42;
-            font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
         }
 
         .step-card {
             background: white;
-            padding: 40px;
+            padding: 60px;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            position: relative;
         }
 
         .step-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(184, 92, 56, 0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(184, 92, 56, 0.18);
         }
 
         .step-number {
@@ -537,20 +536,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 28px;
             font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 12px rgba(184, 92, 56, 0.2);
         }
 
         .step-card h3 {
-            font-size: 20px;
-            margin-bottom: 14px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 18px;
             color: #4A4A42;
+            letter-spacing: -0.3px;
         }
 
         .step-card p {
-            font-size: 15px;
+            font-size: 16px;
             color: #7F8178;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         /* Testimonials */
