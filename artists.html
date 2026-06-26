@@ -443,22 +443,56 @@
 
         .faq-item {
             background: white;
-            padding: 40px;
-            margin-bottom: 20px;
+            padding: 30px 40px;
+            margin-bottom: 15px;
             border-left: 4px solid #B85C38;
+            border-radius: 4px;
         }
 
         .faq-item h3 {
             font-size: 18px;
-            margin-bottom: 15px;
             color: #4A4A42;
             cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-item h3::after {
+            content: '+';
+            font-size: 24px;
+            color: #B85C38;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active h3::after {
+            transform: rotate(45deg);
         }
 
         .faq-item p {
             font-size: 16px;
             color: #7F8178;
             line-height: 1.7;
+            margin: 20px 0 0 0;
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Footer */
@@ -1116,22 +1150,22 @@
             <h2>Questions?</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <h3>Is this for professionals only?</h3>
+                    <h3 onclick="toggleFAQ(this)">Is this for professionals only?</h3>
                     <p>No. Atelier is for all artists—professionals, amateurs, students. If you care about your craft, you belong here.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How do I find collaborators?</h3>
+                    <h3 onclick="toggleFAQ(this)">How do I find collaborators?</h3>
                     <p>Create a profile, describe your discipline and what you're looking for. Browse artists, search by specialty and location, message directly.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>What does it cost to book spaces?</h3>
+                    <h3 onclick="toggleFAQ(this)">What does it cost to book spaces?</h3>
                     <p>Pricing varies by space. Founding members get a discount on booking.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Can I influence the platform?</h3>
+                    <h3 onclick="toggleFAQ(this)">Can I influence the platform?</h3>
                     <p>Yes. Founding artists shape the product roadmap. Your feedback directly influences features and policies.</p>
                 </div>
             </div>
@@ -1147,6 +1181,10 @@
 
     <script>
         let currentTestimonialIndex = 0;
+
+        function toggleFAQ(element) {
+            element.parentElement.classList.toggle('active');
+        }
 
         function changeTestimonial(direction) {
             const testimonials = document.querySelectorAll('.testimonial-content');
