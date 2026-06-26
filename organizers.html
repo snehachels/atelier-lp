@@ -479,16 +479,55 @@
 
         /* Footer */
         footer {
-            background: #4A4A42;
+            background: #2C2C2C;
             color: #B0B0B0;
-            padding: 50px 0;
-            text-align: center;
+            padding: 40px 0;
             font-size: 13px;
+            border-top: 3px solid #B85C38;
         }
 
-        footer a {
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .logo {
+            font-size: 18px;
+            font-weight: 700;
             color: #B85C38;
             text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        footer .social-icons {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        footer .social-icons a {
+            color: #B85C38;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        footer nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        footer nav a {
+            color: #B85C38;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        footer nav a:hover,
+        footer .social-icons a:hover {
+            opacity: 0.8;
         }
 
         /* How It Works */
@@ -1133,7 +1172,16 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Atelier. <a href="#">Privacy</a> • <a href="#">Terms</a></p>
+            <a href="/" class="logo">ATELIER</a>
+            <div class="social-icons">
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="LinkedIn">💼</a>
+            </div>
+            <nav>
+                <a href="/artists">ARTISTS</a>
+                <a href="/spaces">SPACES</a>
+                <a href="/organizers">ORGANIZERS</a>
+            </nav>
         </div>
     </footer>
 
