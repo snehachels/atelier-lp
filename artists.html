@@ -1430,16 +1430,16 @@
         }
 
         function showSuccessModal(message) {
-            const overlay = document.querySelector(.success-modal-overlay.);
-            const messageEl = document.getElementById(.success-message.);
+            const overlay = document.querySelector('.success-modal-overlay');
+            const messageEl = document.getElementById('success-message');
             messageEl.textContent = message;
-            overlay.classList.add(.active.);
+            overlay.classList.add('active');
             setTimeout(closeSuccessModal, 4000);
         }
 
         function closeSuccessModal() {
-            const overlay = document.querySelector(.success-modal-overlay.);
-            overlay.classList.remove(.active.);
+            const overlay = document.querySelector('.success-modal-overlay');
+            overlay.classList.remove('active');
         }
 
         document.addEventListener('DOMContentLoaded', function() {
