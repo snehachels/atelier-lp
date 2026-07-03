@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD4SK4Q40R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZD4SK4Q40R');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atelier for Organizers - Promote Your Events</title>
@@ -1111,7 +1119,7 @@
         <div class="container">
             <h1>Announce Your Event. Reach Your Audience.</h1>
             <p class="tagline">Promote workshops, performances, and creative opportunities. Your event deserves a full house.</p>
-            <button class="cta-button" onclick="document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">Post Your Event</button>
+            <button class="cta-button" onclick="gtag('event','cta_click',{segment:'organizer'});document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">Post Your Event</button>
         </div>
     </section>
 
@@ -1248,7 +1256,7 @@
 
                 <div class="faq-item">
                     <h3 onclick="toggleFAQ(this)">How much does it cost to post an event?</h3>
-                    <p>Posting your event is free. Atelier takes a small commission when artists register or purchase tickets. Founding organizers get special commission rates for the first few months.</p>
+                    <p>Posting your event is free. Atelier takes a small commission when artists register or purchase tickets. Founding organizers get special commission rates locked in for life.</p>
                 </div>
 
                 <div class="faq-item">
@@ -1297,7 +1305,10 @@
 
     <script>
         function toggleFAQ(element) {
-            element.parentElement.classList.toggle('active');
+            const isOpen = element.parentElement.classList.toggle('active');
+            if (isOpen) {
+                gtag('event', 'faq_expand', { faq_question: element.textContent.trim() });
+            }
         }
 
         function handleSignup(e) {
@@ -1363,6 +1374,7 @@
                 mode: 'no-cors'
             }).then(() => {
                 e.target.reset();
+                gtag('event', 'sign_up', { segment: 'organizer' });
                 showSuccessModal(`Thank you! We'll get back to you at ${email}.`);
             }).catch((error) => {
                 console.error('Error:', error);

@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD4SK4Q40R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZD4SK4Q40R');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atelier - A Creative Home for Dancers</title>
@@ -1334,7 +1342,7 @@
                         <div class="audience-card-content">
                             <h3 class="audience-card-title">ARTISTS</h3>
                             <p class="audience-card-description">Find your creative community. Connect with dancers, book spaces, and build your creative community.</p>
-                            <a href="/artists" class="audience-card-button">Learn More</a>
+                            <a href="/artists" class="audience-card-button" onclick="gtag('event','segment_click',{segment:'artist'})">Learn More</a>
                         </div>
                     </div>
 
@@ -1343,7 +1351,7 @@
                         <div class="audience-card-content">
                             <h3 class="audience-card-title">SPACES</h3>
                             <p class="audience-card-description">List your space. Connect with engaged artists and organizers. Manage bookings seamlessly.</p>
-                            <a href="/spaces" class="audience-card-button">Learn More</a>
+                            <a href="/spaces" class="audience-card-button" onclick="gtag('event','segment_click',{segment:'host'})">Learn More</a>
                         </div>
                     </div>
 
@@ -1352,7 +1360,7 @@
                         <div class="audience-card-content">
                             <h3 class="audience-card-title">ORGANIZERS</h3>
                             <p class="audience-card-description">Announce workshops or performances and Promote your events to engaged dancers actively seeking opportunities.</p>
-                            <a href="/organizers" class="audience-card-button">Learn More</a>
+                            <a href="/organizers" class="audience-card-button" onclick="gtag('event','segment_click',{segment:'organizer'})">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -1400,7 +1408,7 @@
             <div class="container">
                 <h1>Where Dancers Create Together</h1>
                 <p class="tagline">Find collaborators. Book spaces. Build your creative practice.</p>
-                <button class="cta-button" onclick="document.getElementById('email-form-artists').scrollIntoView({behavior: 'smooth'})">Join as an Artist</button>
+                <button class="cta-button" onclick="gtag('event','cta_click',{segment:'artist'});document.getElementById('email-form-artists').scrollIntoView({behavior: 'smooth'})">Join as an Artist</button>
             </div>
         </section>
 
@@ -1535,7 +1543,7 @@
             <div class="container">
                 <h1>Fill Your Studio. Grow Your Revenue.</h1>
                 <p class="tagline">List your space. Connect with serious dancers. Get booked.</p>
-                <button class="cta-button" onclick="document.getElementById('email-form-hosts').scrollIntoView({behavior: 'smooth'})">List Your Space</button>
+                <button class="cta-button" onclick="gtag('event','cta_click',{segment:'host'});document.getElementById('email-form-hosts').scrollIntoView({behavior: 'smooth'})">List Your Space</button>
             </div>
         </section>
 
@@ -1692,7 +1700,10 @@
 
     <script>
         function toggleFAQ(element) {
-            element.parentElement.classList.toggle('active');
+            const isOpen = element.parentElement.classList.toggle('active');
+            if (isOpen) {
+                gtag('event', 'faq_expand', { faq_question: element.textContent.trim() });
+            }
         }
 
         function switchView(view) {

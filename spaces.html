@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD4SK4Q40R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZD4SK4Q40R');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atelier for Spaces - List Your Creative Space</title>
@@ -1113,7 +1121,7 @@
         <div class="container">
             <h1>Fill Your Space with Engaged Creators.</h1>
             <p class="tagline">No more empty hours. No more chasing bookings.</p>
-            <button class="cta-button" onclick="document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">List Your Space</button>
+            <button class="cta-button" onclick="gtag('event','cta_click',{segment:'host'});document.getElementById('email-form').scrollIntoView({behavior: 'smooth'})">List Your Space</button>
         </div>
     </section>
 
@@ -1305,7 +1313,10 @@
 
     <script>
         function toggleFAQ(element) {
-            element.parentElement.classList.toggle('active');
+            const isOpen = element.parentElement.classList.toggle('active');
+            if (isOpen) {
+                gtag('event', 'faq_expand', { faq_question: element.textContent.trim() });
+            }
         }
 
         function handleSignup(e) {
@@ -1371,6 +1382,7 @@
                 mode: 'no-cors'
             }).then(() => {
                 e.target.reset();
+                gtag('event', 'sign_up', { segment: 'host' });
                 showSuccessModal(`Thank you! We'll get back to you at ${email}.`);
             }).catch((error) => {
                 console.error('Error:', error);
